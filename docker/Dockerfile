@@ -22,5 +22,7 @@ USER debian
 ONBUILD COPY . /home/debian/app/src/
 ONBUILD WORKDIR /home/debian/app/src
 ONBUILD EXPOSE 8888
+ONBUILD USER root
 ONBUILD RUN nginx -c nginx.conf
+ONBUILD USER debian
 ONBUILD ENTRYPOINT python3 main.py
