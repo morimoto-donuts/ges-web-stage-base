@@ -1,0 +1,10 @@
+backports.ssl-match-hostname==3.4.0.2
+certifi==2015.9.6.2
+payjp==0.0.1
+PyMySQL==0.6.6
+requests==2.8.1
+simplejson==3.8.0
+six==1.10.0
+SQLAlchemy==1.0.9
+tornado==4.2.1
+validate-email==1.3
