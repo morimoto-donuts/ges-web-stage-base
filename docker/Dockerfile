@@ -22,8 +22,7 @@ RUN cd /home/debian/app && \
   rm -rf /var/lib/apt/lists/* && \
   chown -R debian:debian /home/debian
 ENV LANG=ja_JP.UTF-8
-USER debian
 ONBUILD COPY . /home/debian/app/src/
 ONBUILD WORKDIR /home/debian/app/src
 ONBUILD EXPOSE 8888
-ONBUILD ENTRYPOINT python3 main.py
+ONBUILD ENTRYPOINT nginx -c /home/debian/app/src/nginx.conf
