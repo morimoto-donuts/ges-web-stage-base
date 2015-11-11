@@ -25,3 +25,5 @@ ENV LANG=ja_JP.UTF-8
 USER debian
 ONBUILD COPY . /home/debian/app/src/
 ONBUILD WORKDIR /home/debian/app/src
+ONBUILD EXPOSE 8888
+ONBUILD ENTRYPOINT python3 main.py
