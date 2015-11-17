@@ -23,7 +23,7 @@ RUN cd /home/debian/app && \
   rm -rf /var/lib/apt/lists/* && \
   chown -R debian:debian /home/debian
 ENV LANG=ja_JP.UTF-8 TERM=xterm
-COPY supervisor/app.conf /etc/supervisor/conf.d
+COPY supervisor/app.conf /etc/supervisor/conf.d/
 USER debian
 ONBUILD COPY . /home/debian/app/src/
 ONBUILD WORKDIR /home/debian/app/src
