@@ -29,4 +29,3 @@ ONBUILD WORKDIR /home/debian/app/src
 ONBUILD RUN chown -R debian:debian /home/debian
 ONBUILD EXPOSE 8888
 ONBUILD ENTRYPOINT service supervisor start
-ONBUILD USER debian
