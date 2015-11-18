@@ -24,8 +24,10 @@ RUN cd /home/debian/app && \
   chown -R debian:debian /home/debian
 ENV LANG=ja_JP.UTF-8 TERM=xterm
 COPY supervisor/app.conf /etc/supervisor/conf.d/
+COPY supervisor/supervisord.conf /etc/supervisor/
 ONBUILD COPY . /home/debian/app/src/
 ONBUILD WORKDIR /home/debian/app/src
 ONBUILD RUN chown -R debian:debian /home/debian
 ONBUILD EXPOSE 8888
-ONBUILD ENTRYPOINT service supervisor start
+ONBUILD USER debian
+ONBUILD CMD echo password | sudo -S /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
